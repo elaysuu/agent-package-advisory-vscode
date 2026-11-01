@@ -1,0 +1,50 @@
+{
+  "name": "agent-package-advisory",
+  "displayName": "Agent Package Advisory",
+  "description": "Flags dependencies in package.json and requirements.txt that have known advisories in the public OSV.dev database. No API keys.",
+  "version": "0.1.1",
+  "publisher": "elaysuu",
+  "license": "MIT",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "security",
+    "osv",
+    "vulnerability",
+    "npm",
+    "pypi",
+    "dependencies"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "workspaceContains:**/package.json",
+    "workspaceContains:**/requirements*.txt",
+    "onLanguage:json",
+    "onLanguage:pip-requirements"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "agentPackageAdvisory.scan",
+        "title": "Scan dependencies",
+        "category": "Agent Package Advisory"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elaysuu/agent-package-advisory-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/elaysuu/agent-package-advisory-vscode/issues"
+  }
+}

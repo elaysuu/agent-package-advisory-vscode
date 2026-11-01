@@ -1,0 +1,5 @@
+test/**
+.vscodeignore
+RESEARCH.md
+PUBLISH.md
+*.vsix
